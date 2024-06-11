@@ -1,4 +1,4 @@
-import { SmallImagesState } from "./types";
+import { SmallImagesState, SetsArrayState, EventItemState } from "./types";
 
 export const smallImages: SmallImagesState[] = [
   {
@@ -104,5 +104,89 @@ export const smallImages: SmallImagesState[] = [
     width: 100,
     height: 100,
     rotate: 100,
+  },
+];
+
+export const setsArray: SetsArrayState[] = [
+  {
+    icon: "/icon/setsIcon1.svg",
+    title: "Готовые наборы",
+    text: "Готовые наборы со скидкой. Вы можете подобрать набор на подходящий случай.",
+    color1: "#fee9dc",
+    color2: "#fde0cd",
+    rotate: -23.7,
+    shadow: "rgb(213, 184, 165,.6)",
+  },
+  {
+    icon: "/icon/setsIcon2.svg",
+    title: "Собрать свой набор",
+    text: "Выбрать количество макарун, и выбрать вкусы.",
+    color1: "#fedbe1",
+    color2: "#fdccd4",
+    rotate: 23.7,
+    shadow: "rgb(213, 164, 162,.6)",
+  },
+  {
+    icon: "/icon/setsIcon3.svg",
+    title: "Набор с индивидуальной печатью",
+    text: "Собрать набор макарон с уникальным дизайном.",
+    color1: "#d3f2d3",
+    color2: "#c1ecc0",
+    rotate: 203.7,
+    shadow: "rgb(143, 186, 142,.6)",
+  },
+  {
+    icon: "/icon/setsIcon4.svg",
+    title: "Свадебные предложения",
+    text: "Нежные пирожные макаронс с разными вкусами для украшения вашего свадебного торжества.",
+    color1: "#fce6e2",
+    color2: "#fbdbd5",
+    rotate: 156.2,
+    shadow: "rgb(211, 178, 173,.6)",
+  },
+  {
+    icon: "/icon/setsIcon5.svg",
+    title: "Корпоративные подарки",
+    text: "От 85 руб за шт. С уникальным дизайном. Приятный комплимент для коллег и партнеров.",
+    color1: "#cceaeb",
+    color2: "#b7e1e3",
+    rotate: -23.7,
+    shadow: "rgb(143, 185, 187,.6)",
+  },
+  {
+    icon: "/icon/setsIcon6.svg",
+    title: "Опытные поставки",
+    text: "Предложение для кофеен, кафе, отелей и т.д. Посмотрите условия сотрудничества и отзывы.",
+    color1: "#ddddf3",
+    color2: "#cecfee",
+    rotate: 23.7,
+    shadow: "rgb(166, 167, 198,.6)",
+  },
+];
+
+export const EventItemArray: EventItemState[] = [
+  {
+    title: "Бесплатная доставка",
+    image: "/image/eventImage1.png",
+    text: "По СПб в районе КАД –  от 3000₽По МСК – от 5000₽",
+    color: "#8cc4ec",
+  },
+  {
+    title: "Новинка",
+    image: "/image/eventImage2.png",
+    text: "Шоколадное пирожное картошка на основе бисквита!",
+    color: "#ff4d6d",
+  },
+  {
+    title: "Новинка",
+    image: "/image/eventImage3.png",
+    text: "Аппетитные конфеты на основе миндального печенья и крема",
+    color: "#ff4d6d",
+  },
+  {
+    title: "Слдакая новинка",
+    image: "/image/eventImage4.png",
+    text: "Карамель на палочке из натуральных ингредиентов",
+    color: "#ff4d6d",
   },
 ];
