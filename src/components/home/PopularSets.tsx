@@ -2,9 +2,24 @@ import React from "react";
 import { Container } from "@mui/material";
 import { styled } from "@mui/material";
 
-import { popularSets } from "../../utils/constans";
+// import { popularSets } from "../../utils/constans";
+import axios from "axios";
+import { PopularSetState } from "../../utils/types";
 
 const PopularSets: React.FC = () => {
+  const [array, setArray] = React.useState<PopularSetState[]>();
+  React.useEffect(() => {
+    getPopularMacaron();
+  }, []);
+  const getPopularMacaron = async () => {
+    try {
+      const response = await axios.get("http://localhost:4444/macaronSets");
+      setArray(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <h1
@@ -18,7 +33,7 @@ const PopularSets: React.FC = () => {
         Популярные наборы
       </h1>
       <StyledContainer>
-        {popularSets.map((obj, i) => (
+        {array?.map((obj, i) => (
           <ItemBox key={i}>
             <ImageBox>
               <img src={obj.image} alt={obj.name} />
