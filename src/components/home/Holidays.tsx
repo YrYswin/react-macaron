@@ -12,7 +12,7 @@ const holidayArray: HolidayState[] = [
   {
     date: "Скоро",
     description: "День рождение бизского человека",
-    icon: "/icon/doughnut1",
+    icon: "/icon/doughnut1.svg",
     birthday: true,
   },
   {
@@ -44,11 +44,24 @@ const holidayArray: HolidayState[] = [
 
 const Holidays: React.FC = () => {
   return (
-    <Container>
-      {holidayArray.map((obj, i) => (
-        <div key={i}>{obj.date}</div>
-      ))}
-    </Container>
+    <>
+      <h1 style={{ textAlign: "center" }}>Ближайшие праздники</h1>
+      <Container>
+        <Line />
+        {holidayArray.map((obj, i) => (
+          <ItemDay key={i} style={{ fontWeight: i === 0 ? "bold" : "" }}>
+            <ImageBox>
+              {obj.birthday && (
+                <HatIcon src="/icon/birthdayHat.svg" alt="hat" />
+              )}
+              <img src={obj.icon} alt="doughnut" />
+            </ImageBox>
+            <span>{obj.date}</span>
+            <p>{obj.description}</p>
+          </ItemDay>
+        ))}
+      </Container>
+    </>
   );
 };
 
@@ -57,4 +70,46 @@ export default Holidays;
 const Container = styled("div")({
   display: "flex",
   justifyContent: "space-between",
+  margin: "50px 0",
+  position: "relative",
+});
+const Line = styled("div")({
+  position: "absolute",
+  top: "20%",
+  left: "5%",
+  width: "90%",
+  borderTop: "2px dashed",
+});
+
+const ItemDay = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  textAlign: "center",
+  width: "150px",
+  cursor: "pointer",
+  transition: "ease-in-out .15s",
+
+  ":hover": {
+    transform: "scale(1.05)",
+
+    div: {
+      filter: "drop-shadow(0px 0px 20px rgb(250,170,130))",
+    },
+  },
+
+  p: {
+    lineHeight: "1.2",
+  },
+});
+const ImageBox = styled("div")({
+  display: "flex",
+  flexDirection: "column",
+  position: "relative",
+});
+
+const HatIcon = styled("img")({
+  position: "absolute",
+  top: "-55px",
+  right: "-26px",
 });

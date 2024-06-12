@@ -6,7 +6,9 @@ const EventItem: React.FC<EventItemState> = ({ title, text, image, color }) => {
   return (
     <Container>
       <DiscountText color={color}>{title.toUpperCase()}</DiscountText>
-      <Image src={image} alt="image" />
+      <ImageContainer>
+        <img src={image} alt="image" />
+      </ImageContainer>
       <TextBox color={color}>
         <p>{text}</p>
       </TextBox>
@@ -29,9 +31,23 @@ const DiscountText = styled("div")<{ color: string }>(({ color }) => ({
   color: "white",
   padding: "1px 15px",
 }));
-const Image = styled("img")({
+const ImageContainer = styled("div")({
   width: "100%",
+  height: "300px",
   borderRadius: "10px 10px 0 0",
+  overflow: "hidden",
+  position: "relative",
+
+  img: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transition: "transform 0.3s ease",
+
+    ":hover": {
+      transform: "scale(1.1)",
+    },
+  },
 });
 
 const TextBox = styled("div")<{ color: string }>(({ color }) => ({

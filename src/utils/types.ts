@@ -23,3 +23,23 @@ export interface EventItemState {
   image: string;
   color: string;
 }
+
+export interface PopularSetState {
+  name: string;
+  text: string;
+  price: number;
+  image: string;
+}
+
+export interface NewsItem {
+  date: string;
+  image: string;
+  title: string;
+  text: string;
+}
+
+export interface AboutUsState {
+  image: string;
+  title: string;
+  text: string;
+}

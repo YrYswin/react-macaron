@@ -1,4 +1,11 @@
-import { SmallImagesState, SetsArrayState, EventItemState } from "./types";
+import {
+  NewsItem,
+  SmallImagesState,
+  SetsArrayState,
+  EventItemState,
+  PopularSetState,
+  AboutUsState,
+} from "./types";
 
 export const smallImages: SmallImagesState[] = [
   {
@@ -188,5 +195,88 @@ export const EventItemArray: EventItemState[] = [
     image: "/image/eventImage4.png",
     text: "Карамель на палочке из натуральных ингредиентов",
     color: "#ff4d6d",
+  },
+];
+
+export const popularSets: PopularSetState[] = [
+  {
+    name: "Сердце",
+    text: "24 штуки в коробке в виде сердца. Ассорти из 6 вкусов ",
+    price: 2800,
+    image: "/image/popularSet1.png",
+  },
+  {
+    name: "Сердце",
+    text: "24 штуки в коробке в виде сердца. Ассорти из 6 вкусов ",
+    price: 2800,
+    image: "/image/popularSet2.png",
+  },
+  {
+    name: "Сердце",
+    text: "24 штуки в коробке в виде сердца. Ассорти из 6 вкусов ",
+    price: 2800,
+    image: "/image/popularSet3.png",
+  },
+  {
+    name: "Сердце",
+    text: "24 штуки в коробке в виде сердца. Ассорти из 6 вкусов ",
+    price: 2800,
+    image: "/image/popularSet4.png",
+  },
+  {
+    name: "Сердце",
+    text: "24 штуки в коробке в виде сердца. Ассорти из 6 вкусов ",
+    price: 2800,
+    image: "/image/popularSet5.png",
+  },
+  {
+    name: "Сердце",
+    text: "24 штуки в коробке в виде сердца. Ассорти из 6 вкусов ",
+    price: 2800,
+    image: "/image/popularSet6.png",
+  },
+];
+
+export const newsArray: NewsItem[] = [
+  {
+    image: "/image/newsImage1.png",
+    title: "Скоро главный праздник весны",
+    date: "25.02.2023",
+    text: "Девушки любят, когда вкусно, красиво и натурально. Смотрите больше наборов с десертами ручной работы",
+  },
+  {
+    image: "/image/newsImage2.png",
+    title: "Конкурс на 23 февраля!",
+    date: "17.02.2023",
+    text: "День Защитника Отечества уже совсем скоро! Порадуйте своего сладкоежку с помощью аппетитных наборов от МакаронШоп",
+  },
+  {
+    image: "/image/newsImage3.png",
+    title: "Экспресс-конкурс ко дню Святого Валентина",
+    date: "11.02.2023",
+    text: "Подарок уже через 2 дняДень всех влюблённых не за горами. Расскажи о своих чувствах с помощью сладкой валентинки от МакаронШоп",
+  },
+];
+
+export const aboutUsArray: AboutUsState[] = [
+  {
+    image: "/image/aboutUsImage1.png",
+    title: "Лучшие ингрединты",
+    text: "Что-то про суперкачество, лучших поваров, свежесть и т.д.",
+  },
+  {
+    image: "/image/aboutUsImage2.png",
+    title: "Упаковка",
+    text: "Что-то про суперкоробочки и бантики и бла бла бла",
+  },
+  {
+    image: "/image/aboutUsImage3.png",
+    title: "Получение в день заказа",
+    text: "В день заказа доставка курьером или самовывоз",
+  },
+  {
+    image: "/image/aboutUsImage4.png",
+    title: "Анонимная доставка",
+    text: "Можем преподнести Ваш заказ как анонимный подарок",
   },
 ];
