@@ -6,8 +6,14 @@ import { styled } from "@mui/material/styles";
 
 import { KitText } from "../../utils/Kit";
 import { Product } from "../../utils/ProductKit";
+import { useNavigate } from "react-router-dom";
 
 const MadeKits: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleId = (id: number) => {
+    navigate(`kits/${id}`);
+  };
   return (
     <StyledContainer>
       <Container>
@@ -57,6 +63,7 @@ const MadeKits: React.FC = () => {
                 maxHeight: "459px",
                 borderRadius: "5px",
               }}
+              onClick={() => handleId(el.id)}
             >
               <div>
                 <img
@@ -199,5 +206,5 @@ export default MadeKits;
 
 const StyledContainer = styled("div")({
   background: "#EDEDF0",
-  padding: "41px 0px 80px 0"
+  padding: "41px 0px 80px 0",
 });
