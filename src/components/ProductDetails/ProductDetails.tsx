@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../UI/Container";
 import { styled } from "@mui/material/styles";
 import { useParams } from "react-router-dom";
@@ -23,6 +23,25 @@ const ProductDetails: React.FC = () => {
   if (!product) {
     return <Typography>Product not found</Typography>;
   }
+
+  const [currentImage, setCurrentImage] = useState(product.img);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleImageClick = (image: string) => {
+    setCurrentImage(image);
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % Product.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? Product.length - 1 : prevIndex - 1
+    );
+  };
+
+  const productsToShow = Product.slice(currentIndex, currentIndex + 4);
+
   return (
     <StyledContainer>
       <Container>
@@ -47,7 +66,7 @@ const ProductDetails: React.FC = () => {
             <div style={{ width: "100%", height: "450px" }}>
               <img
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                src={product.img}
+                src={currentImage}
                 alt="image"
               />
             </div>
@@ -67,6 +86,7 @@ const ProductDetails: React.FC = () => {
                 }}
                 src={product.detailImage["img-1"]}
                 alt="image"
+                onClick={() => handleImageClick(product.detailImage["img-1"])}
               />
               <img
                 style={{
@@ -77,6 +97,7 @@ const ProductDetails: React.FC = () => {
                 }}
                 src={product.detailImage["img-2"]}
                 alt="image"
+                onClick={() => handleImageClick(product.detailImage["img-2"])}
               />
               <img
                 style={{
@@ -87,6 +108,7 @@ const ProductDetails: React.FC = () => {
                 }}
                 src={product.detailImage["img-3"]}
                 alt="image"
+                onClick={() => handleImageClick(product.detailImage["img-3"])}
               />
             </div>
           </div>
@@ -333,7 +355,7 @@ const ProductDetails: React.FC = () => {
             Вам могут понравиться
           </Typography>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "55px" }}>
-            {Product.slice(6, 10).map((el) => (
+            {productsToShow.map((el) => (
               <Card_last el={el} key={el.id} />
             ))}
           </div>
@@ -347,6 +369,7 @@ const ProductDetails: React.FC = () => {
             }}
           >
             <Button
+              onClick={handlePrev}
               sx={{
                 width: "50px",
                 height: "50px",
@@ -362,6 +385,7 @@ const ProductDetails: React.FC = () => {
               <img src={NextSvg} alt="svg" />
             </Button>
             <Button
+              onClick={handleNext}
               sx={{
                 position: "absolute",
                 left: "1210px",

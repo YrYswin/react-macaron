@@ -28,7 +28,7 @@ export interface ProductKit {
   cherry: string;
   coconut: string;
   text: string;
-  detailImage: Images
+  detailImage: Images;
 }
 
 export interface MoreDetail {
