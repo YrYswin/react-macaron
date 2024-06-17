@@ -438,4 +438,5 @@ export default ProductDetails;
 const StyledContainer = styled("div")({
   background: "#EDEDF0",
   padding: "41px 0px 80px 0",
+  color: "#222"
 });
