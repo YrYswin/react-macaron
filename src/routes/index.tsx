@@ -1,6 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Layout/Layout";
 import Home from "../pages/Home";
+import MadeKits from "../components/made_kits/MadeKits";
+import ProductDetails from "../components/ProductDetails/ProductDetails";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ export const router = createBrowserRouter([
       {
         path: "discount-day",
         element: <div>discount</div>,
+      },
+      {
+        path: "kits",
+        element: <MadeKits />,
+      },
+      {
+        path: "kits/:id",
+        element: <ProductDetails />,
       },
     ],
   },
