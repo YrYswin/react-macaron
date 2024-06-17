@@ -7,9 +7,10 @@ import { smallImages } from "../../utils/constans";
 const Banner: React.FC = () => {
   return (
     <Container>
-      <RedHighlights />
-      <YellowHighlights />
-      <PinkHighlights />
+      <Highlights color={"#b2efcd"} top={100} right={100} size={250} />
+      <Highlights color={"#f9f6a6"} top={200} right={-50} size={200} />
+      <Highlights color={"#ffde91"} top={300} right={100} size={200} />
+
       <ImageContainer>
         <img src="/image/macaronLove.svg" alt="macaron" />
       </ImageContainer>
@@ -91,36 +92,19 @@ const AnimatedImage = styled(motion.img)<{
   transform: `rotate(${rotate}deg)`,
 }));
 
-const RedHighlights = styled("div")({
+const Highlights = styled("div")<{
+  top: number;
+  right: number;
+  size: number;
+  color: string;
+}>(({ top, right, size, color }) => ({
   position: "absolute",
   borderRadius: "50%",
-  backgroundColor: "#aeeeca",
+  backgroundColor: color,
   filter: "blur(50px)",
-  width: "300px",
-  height: "300px",
-  top: "150px",
-  right: "-50px",
+  width: `${size}px`,
+  height: `${size}px`,
+  top: `${top}px`,
+  right: `${right}px`,
   transform: "translate(-50%, -50%)",
-});
-const YellowHighlights = styled("div")({
-  position: "absolute",
-  borderRadius: "50%",
-  backgroundColor: "#f9ff89",
-  filter: "blur(50px)",
-  width: "250px",
-  height: "250px",
-  top: "350px",
-  right: "-50px",
-  transform: "translate(-50%, -50%)",
-});
-const PinkHighlights = styled("div")({
-  position: "absolute",
-  borderRadius: "50%",
-  backgroundColor: "#fedbe1",
-  filter: "blur(50px)",
-  width: "200px",
-  height: "200px",
-  top: "400px",
-  right: "100px",
-  transform: "translate(-50%, -50%)",
-});
+}));
