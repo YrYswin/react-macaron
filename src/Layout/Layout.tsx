@@ -1,7 +1,8 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import Header from "../components/admin/Header";
-import Footer from "../components/admin/Footer";
+// Layout.tsx
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from '../components/header/Header';
+import Footer from '../components/Footer';
 
 const Layout: React.FC = () => {
   return (
