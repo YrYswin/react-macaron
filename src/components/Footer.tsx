@@ -161,7 +161,6 @@ const FooterContact = styled.div`
 
 const ContactText = styled.p`
   margin: 3px 0;
-  border: 1px solid;
   text-align: left;
   font-size: 14px;
   color: #333;
