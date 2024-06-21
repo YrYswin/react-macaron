@@ -76,3 +76,7 @@ export interface AboutUsState {
   text: string;
 }
 
+export interface PagesState {
+  pathname: string;
+  name: string;
+}

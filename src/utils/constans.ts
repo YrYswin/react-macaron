@@ -5,6 +5,7 @@ import {
   EventItemState,
   PopularSetState,
   AboutUsState,
+  PagesState,
 } from "./types";
 
 export const smallImages: SmallImagesState[] = [
@@ -280,7 +281,8 @@ export const aboutUsArray: AboutUsState[] = [
     text: "Можем преподнести Ваш заказ как анонимный подарок",
   },
 ];
-export const pagesArray = [
+
+export const pagesArray: PagesState[] = [
   {
     pathname: "/cart",
     name: "Корзина",

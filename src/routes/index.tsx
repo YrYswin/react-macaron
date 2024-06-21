@@ -3,6 +3,7 @@ import Layout from "../Layout/Layout";
 import Home from "../pages/Home";
 import MadeKits from "../components/made_kits/MadeKits";
 import ProductDetails from "../components/ProductDetails/ProductDetails";
+import CartPage from "../pages/CartPage";
 
 export const router = createBrowserRouter([
   {
@@ -28,6 +29,10 @@ export const router = createBrowserRouter([
       {
         path: "kits/:id",
         element: <ProductDetails />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
       },
     ],
   },

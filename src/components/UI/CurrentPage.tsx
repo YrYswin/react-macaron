@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 import { pagesArray } from "../../utils/constans";
+import { Link } from "react-router-dom";
 
 interface CurrentPageState {
   thisPage: string;
