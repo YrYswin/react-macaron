@@ -43,3 +43,8 @@ export interface AboutUsState {
   title: string;
   text: string;
 }
+
+export interface PagesState {
+  pathname: string;
+  name: string;
+}

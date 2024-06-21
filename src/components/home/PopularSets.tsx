@@ -2,9 +2,9 @@ import React from "react";
 import { Container } from "@mui/material";
 import { styled } from "@mui/material";
 
-// import { popularSets } from "../../utils/constans";
 import axios from "axios";
 import { PopularSetState } from "../../utils/types";
+import { popularSets } from "../../utils/constans";
 
 const PopularSets: React.FC = () => {
   const [array, setArray] = React.useState<PopularSetState[]>();
@@ -14,7 +14,7 @@ const PopularSets: React.FC = () => {
   const getPopularMacaron = async () => {
     try {
       const response = await axios.get("http://localhost:4444/macaronSets");
-      setArray(response.data);
+      setArray(response ? response.data : popularSets);
     } catch (err) {
       console.log(err);
     }

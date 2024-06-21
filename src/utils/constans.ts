@@ -5,6 +5,7 @@ import {
   EventItemState,
   PopularSetState,
   AboutUsState,
+  PagesState,
 } from "./types";
 
 export const smallImages: SmallImagesState[] = [
@@ -278,5 +279,12 @@ export const aboutUsArray: AboutUsState[] = [
     image: "/image/aboutUsImage4.png",
     title: "Анонимная доставка",
     text: "Можем преподнести Ваш заказ как анонимный подарок",
+  },
+];
+
+export const pagesArray: PagesState[] = [
+  {
+    pathname: "/cart",
+    name: "Корзина",
   },
 ];
