@@ -280,3 +280,9 @@ export const aboutUsArray: AboutUsState[] = [
     text: "Можем преподнести Ваш заказ как анонимный подарок",
   },
 ];
+export const pagesArray = [
+  {
+    pathname: "/cart",
+    name: "Корзина",
+  },
+];
