@@ -10,19 +10,19 @@ import CustomDialog from "../UI/ModalDirections";
 import NavMacaron from "../../../public/image/NavMacaron.svg";
 import SeedIcon from "../../../public/image/SeedIcon.svg";
 import MacaronShopMenu from "./MacaronShopMenu";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
 import { AiTwotoneEnvironment } from "react-icons/ai";
 import { FaChevronDown } from "react-icons/fa";
 import { Avatar, Stack } from "@mui/material";
 
 const Header: React.FC = () => {
   const [open, setOpen] = React.useState(false);
-  const [selectedArea, setSelectedArea] = React.useState('Выбрать область');
+  const [selectedArea, setSelectedArea] = React.useState("Выбрать область");
   const [tempSelectedArea, setTempSelectedArea] = React.useState(selectedArea);
 
   useEffect(() => {
     // Загружаем сохраненную область из localStorage при монтировании компонента
-    const savedArea = localStorage.getItem('selectedArea');
+    const savedArea = localStorage.getItem("selectedArea");
     if (savedArea) {
       setSelectedArea(savedArea);
       setTempSelectedArea(savedArea);
@@ -44,21 +44,30 @@ const Header: React.FC = () => {
 
   const handleSave = () => {
     setSelectedArea(tempSelectedArea);
-    localStorage.setItem('selectedArea', tempSelectedArea);
+    localStorage.setItem("selectedArea", tempSelectedArea);
     handleClose();
   };
 
-  const regions = ['Бишкек', 'Ош', 'Джалал-Абад', 'Чуй', 'Нарын', 'Талас', 'Иссык-Куль', 'Баткен'];
+  const regions = [
+    "Бишкек",
+    "Ош",
+    "Джалал-Абад",
+    "Чуй",
+    "Нарын",
+    "Талас",
+    "Иссык-Куль",
+    "Баткен",
+  ];
 
   const slides = [
-    { text: 'МИНДАЛЬНАЯ МУКА И НАТУРАЛЬНЫЕ ИНГРЕДИЕНТЫ', imageUrl: SeedIcon },
-    { text: 'ВСЕГДА СВЕЖЕЕ', imageUrl: NavMacaron },
-    { text: 'ОПТОВЫЕ ПОСТАВКИ ОТ ПРОИЗВОДИТЕЛЯ', imageUrl: BoxMacaron },
-    { text: 'ДОСТАВКА В ДЕНЬ ЗАКАЗА', imageUrl: CarMacaron }
+    { text: "МИНДАЛЬНАЯ МУКА И НАТУРАЛЬНЫЕ ИНГРЕДИЕНТЫ", imageUrl: SeedIcon },
+    { text: "ВСЕГДА СВЕЖЕЕ", imageUrl: NavMacaron },
+    { text: "ОПТОВЫЕ ПОСТАВКИ ОТ ПРОИЗВОДИТЕЛЯ", imageUrl: BoxMacaron },
+    { text: "ДОСТАВКА В ДЕНЬ ЗАКАЗА", imageUrl: CarMacaron },
   ];
 
   return (
-    <header style={{ paddingBottom: '12px' }}>
+    <header style={{ paddingBottom: "12px" }}>
       <HeaderSlider slides={slides} />
       <NavHeader className="container">
         <div>
@@ -69,7 +78,8 @@ const Header: React.FC = () => {
         </div>
         <HeaderRight>
           <ModalDirectionsBtn onClick={handleClickOpen}>
-             <AiTwotoneEnvironment fontSize={22}/> {selectedArea} <FaChevronDown fontSize={10}/>
+            <AiTwotoneEnvironment fontSize={22} /> {selectedArea}{" "}
+            <FaChevronDown fontSize={10} />
           </ModalDirectionsBtn>
           <CustomDialog
             open={open}
@@ -81,7 +91,9 @@ const Header: React.FC = () => {
                   <Button
                     key={region}
                     onClick={() => handleAreaChange(region)}
-                    variant={tempSelectedArea === region ? 'contained' : 'outlined'}
+                    variant={
+                      tempSelectedArea === region ? "contained" : "outlined"
+                    }
                     fullWidth
                   >
                     {region}
@@ -100,11 +112,13 @@ const Header: React.FC = () => {
               </React.Fragment>
             }
           />
-          <BasNum >
+          <BasNum>
             <IoPhonePortraitOutline fontSize={19} /> +8 812 309-82-88
           </BasNum>
           <BasNum>
-            <NavLink to="/"><HiOutlineShoppingBag fontSize={20} /> В корзине (4 товара)</NavLink>
+            <NavLink to="/cart">
+              <HiOutlineShoppingBag fontSize={20} /> В корзине (4 товара)
+            </NavLink>
           </BasNum>
           <BasNum>
             <Stack direction="row" spacing={2}>
@@ -124,13 +138,13 @@ const ButtonMuiRegions = styled(Button)`
   && {
     padding: 0.5em 0.7em;
     width: 100vw;
-    color: #007BFF;
+    color: #007bff;
     margin: 1em 8px;
-    border: 1.5px solid #007BFF;
+    border: 1.5px solid #007bff;
   }
   &&:hover {
-    background-color: #007BFF;
-    border-color: #007BFF;
+    background-color: #007bff;
+    border-color: #007bff;
     color: white;
   }
 `;
@@ -162,7 +176,7 @@ const StyledNavLink = styled(NavLink)`
   text-decoration: none;
   padding: 0 0 10px 0;
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 1.5px;

@@ -7,11 +7,11 @@ interface HeaderSliderProps {
 
 const HeaderSlider: React.FC<HeaderSliderProps> = ({ slides }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % slides.length);
-    }, 1500);
+    }, 3500);
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -20,14 +20,12 @@ const HeaderSlider: React.FC<HeaderSliderProps> = ({ slides }) => {
       {slides.map((slide, index) => (
         <SliderItem key={index} $show={index === currentSlideIndex}>
           <SliderImage src={slide.imageUrl} alt={`Slide ${index + 1}`} />
-          <span style={{paddingLeft:'12px'}}>{slide.text}</span>
+          <span style={{ paddingLeft: "12px" }}>{slide.text}</span>
         </SliderItem>
       ))}
     </SliderContainer>
   );
 };
-
-
 
 export default HeaderSlider;
 
@@ -44,14 +42,13 @@ const SliderItem = styled.div<{ $show: boolean }>`
   left: 0;
   width: 100%;
   height: 100%;
-  display: ${({ $show }) => ($show ? 'flex' : 'none')};
+  display: ${({ $show }) => ($show ? "flex" : "none")};
   justify-content: center;
   align-items: center;
   font-size: 14px;
   background-color: lightblue;
-  z-index: ${({ $show }) => ($show ? '1' : '-1')};
+  z-index: ${({ $show }) => ($show ? "1" : "-1")};
 `;
-
 
 const SliderImage = styled.img`
   max-width: 100%;
